@@ -24,8 +24,9 @@ public final class QuizContract {
         public static final String COLUMN_TOPIC_ID = "Topic_ID";         //programing/math /int
         public static final String COLUMN_ANSWERED_TIMES = "Answered_Skaits";
         public static final String COLUMN_TRUE_TIMES = "True_Skaits";
-
-
-
     }
+
+
+
+
 }

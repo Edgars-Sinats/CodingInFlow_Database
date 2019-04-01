@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class RTU_TeacherActivity extends AppCompatActivity{
+
     private Button buttonDocuments;
     private Button buttonTest;
     private Button buttonCalendar;

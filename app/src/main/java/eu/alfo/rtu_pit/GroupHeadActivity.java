@@ -18,7 +18,9 @@ import java.util.List;
 public class GroupHeadActivity extends AppCompatActivity{
 
     QuizDbHelper dbHelper = QuizDbHelper.getInstance(this);
-//    private Spinner spinnerNumberOfQuestion;
+
+
+    //    private Spinner spinnerNumberOfQuestion;
     private Spinner spinnerAnswered;
     private Spinner spinnerCategory;
 

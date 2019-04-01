@@ -18,7 +18,7 @@ import static android.content.ContentValues.TAG;
 
 public class QuizDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "HUNTTEST.db"; //Change name if you want to test
-    private static final int DATABASE_VERSION = 7; //increase(aTimes-12)(7)
+    private static final int DATABASE_VERSION = 9; //increase(aTimes-12)(7)
 
     private static QuizDbHelper instance;
 
@@ -65,6 +65,14 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_QUESTIONS_TABLE);
         fillCategoriesTable();
         fillQuestionsTable();
+
+        String querries[] = NewsContract.getSQLQuerry();
+
+
+        for(int i =0; i<querries.length; i++){
+            db.execSQL(querries[i]);
+        }
+        int a = 0;
     }
 
     @Override

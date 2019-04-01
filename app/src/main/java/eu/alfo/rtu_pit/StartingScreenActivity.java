@@ -122,6 +122,7 @@ public class StartingScreenActivity extends AppCompatActivity {
 
     private void loadCategories() {
         QuizDbHelper dbHelper = QuizDbHelper.getInstance(this);
+
         List<Category> categories = dbHelper.getAllCategories();
 
         ArrayAdapter<Category> adapterCategories = new ArrayAdapter<>(this,
