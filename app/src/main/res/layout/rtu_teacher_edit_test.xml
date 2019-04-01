@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="390dp"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:id="@+id/textViewNewQuestBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Jautājuma rediģēšana" />
+
+    <LinearLayout android:id="@+id/ssDAS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="34dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextQuest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Vecais jautājums" />
+
+        <EditText
+            android:id="@+id/editTextQuestNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Jaunais jautājums" />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/ssDAK1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ssDAS"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextAns1"
+            android:layout_width="143dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:clickable="true"
+            android:text="Atbile NR.1" />
+
+        <EditText
+            android:id="@+id/editTextAns11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:clickable="true"
+            android:text="Jaunā atbile NR.1" />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/ssDAK2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ssDAK1"
+
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextAns2"
+            android:layout_width="143dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:clickable="true"
+            android:text="Atbile NR.2" />
+
+        <EditText
+            android:id="@+id/editTextAns22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:clickable="true"
+            android:text="Jaunā atbile NR.2" />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/ssDAK3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ssDAK2"
+
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextAns3"
+            android:layout_width="143dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:clickable="true"
+            android:text="Atbile NR.3" />
+
+        <EditText
+            android:id="@+id/editTextAns33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:clickable="true"
+            android:text="Jaunā atbile NR.3" />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/ssDAK4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ssDAK3"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextAns4"
+            android:layout_width="143dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:clickable="true"
+            android:text="Atbile NR.4" />
+
+        <EditText
+            android:id="@+id/editTextAns44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:clickable="true"
+            android:text="Jaunā atbile NR.4" />
+
+    </LinearLayout>
+
+
+
+
+    <!--<EditText-->
+        <!--android:id="@+id/editTextAns2"-->
+        <!--android:layout_width="111dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_below="@id/editTextAns1"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:clickable="true"-->
+        <!--android:text="Atbile NR.2" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/editTextAns3"-->
+        <!--android:layout_width="110dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_below="@id/editTextAns2"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:clickable="true"-->
+        <!--android:text="Atbile NR.3" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/editTextAns4"-->
+        <!--android:layout_width="111dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_below="@id/editTextAns3"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:clickable="true"-->
+        <!--android:text="Atbile NR.4" />-->
+
+    <Button
+        android:id="@+id/buttonCreateNewQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Mainīt" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="55dp"
+        android:layout_marginStart="147dp"></Spinner>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/_dynamic"
+        android:text="Tēmas apstiprināšana"
+        tools:ignore="UnknownId" />
+
+
+</RelativeLayout>

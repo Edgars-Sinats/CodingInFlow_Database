@@ -3,6 +3,15 @@
     <color name="colorPrimary">#795548</color>
     <color name="colorPrimaryDark">#5D4037</color>
     <color name="colorAccent">#FFEB3B</color>
+    <color name="colorBackground">#e1e1e1</color>
 
-    <color name="colorBackground">#BCAAA4</color>
+
+    <!--<color name="colorPrimary">#a35e13</color>-->
+    <!--<color name="primaryLightColor">#d98c42</color>-->
+    <!--<color name="colorPrimaryDark">#6f3300</color>-->
+    <!--<color name="secondaryColor">#519b15</color>-->
+    <!--<color name="colorAccent">#84cc4a</color>-->
+    <!--<color name="colorBackground">#186c00</color>-->
+    <!--<color name="primaryTextColor">#ede85f</color>-->
+    <!--<color name="secondaryTextColor">#2d0000</color>-->
 </resources>

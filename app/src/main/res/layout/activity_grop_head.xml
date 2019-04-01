@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/LinLayActGroup1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="85dp"
+            android:text="@string/User"
+            android:textSize="15sp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/buttonGroupHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/GroupHead"
+            android:textSize="15dp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinLaytestExample"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LinLayActGroup1"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView_testExample"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/TestType"
+            android:textSize="20dp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/spinner_testExample"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/text_view_TextType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="non"
+            android:textSize="20dp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+    <!--<LinearLayout android:id="@+id/LinLayScore"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/LinLaytestExample"-->
+    <!--android:gravity="center"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/text_view_highscore"-->
+    <!--android:textSize="20dp"-->
+    <!--android:textStyle="normal"-->
+    <!--android:text="@string/HightScore"/>-->
+
+    <!--<TextView-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/text_view_hightScoreChange"-->
+    <!--android:textSize="22dp"-->
+    <!--android:textStyle="italic"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:text=" 0 OF 60"/>-->
+
+
+    <!--</LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/LinLayAnswered"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LinLaytestExample"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView_testAnswered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Answered"
+            android:textSize="20dp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/spinner_Answered"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="106dp"
+            android:layout_height="44dp"
+            android:text="Kategorijas"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner_category2"
+            android:layout_width="53dp"
+            android:layout_height="44dp"
+            android:scrollbarSize="20dp" />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/LinLaySearchQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <Button
+            android:id="@+id/buttonMakeQuestion"
+            android:layout_width="300dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center"
+            android:text="Izveido savu jautājumu +"
+            android:visibility="visible" />
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextViewSearch"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Meklē jautājumu"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints" />
+
+        <ImageButton
+            android:id="@+id/ImageSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            app:srcCompat="@drawable/search"
+            tools:ignore="VectorDrawableCompat" />
+
+
+    </LinearLayout>
+
+
+    <!--<ScrollView-->
+        <!--android:id="@+id/scrollViewJautajumi"-->
+        <!--android:layout_width="368dp"-->
+        <!--android:layout_height="match_parent"-->
+
+        <!--android:background="@color/colorBackground"-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_below="@+id/buttonMakeQuestion">-->
+
+
+
+        <LinearLayout
+            android:id="@+id/LinLayListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+        <ListView
+                android:id="@+id/listViewOneObject"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+
+                android:divider="@color/material_blue_grey_800"
+                android:dividerHeight="5dp"
+                android:footerDividersEnabled="false" />
+
+
+        </LinearLayout>
+
+    <!--</ScrollView>-->
+
+    <Button
+        android:id="@+id/buttonMakeTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="25dp"
+        android:text="Izveidot Testu" />
+
+</LinearLayout>
+
+    <!--<Button-->
+    <!--android:id="@+id/buttonAddQuestion"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignEnd="@+id/scrollViewJautajumi"-->
+    <!--android:layout_below="@+id/scrollViewJautajumi"-->
+    <!--android:text="Pievienot testam"-->
+    <!--tools:ignore="MissingConstraints"-->
+    <!--tools:layout_editor_absoluteX="215dp"-->
+    <!--tools:layout_editor_absoluteY="300dp" />-->

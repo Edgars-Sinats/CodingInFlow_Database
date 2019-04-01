@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="390dp"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:id="@+id/textViewNewQuestBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Jauna jautājuma izveide" />
+
+    <EditText
+        android:id="@+id/editTextQuest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textViewNewQuestBanner"
+        android:layout_marginTop="15dp"
+        android:text="Ievadiet jautājumu" />
+
+    <EditText
+        android:id="@+id/editTextAns1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/editTextQuest"
+        android:layout_marginTop="15dp"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:text="Atbile NR.1" />
+
+    <EditText
+        android:id="@+id/editTextAns2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/editTextAns1"
+        android:layout_marginTop="5dp"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:text="Atbile NR.2" />
+    <EditText
+        android:id="@+id/editTextAns3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/editTextAns2"
+        android:layout_marginTop="5dp"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:text="Atbile NR.3" />
+    <EditText
+        android:id="@+id/editTextAns4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/editTextAns3"
+        android:layout_marginTop="5dp"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:text="Atbile NR.4" />
+
+    <Button
+        android:id="@+id/buttonCreateNewQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Izeidot" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="55dp"
+        android:layout_marginStart="147dp"></Spinner>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/_dynamic"
+        android:text="Tēmas pievienošana"
+        tools:ignore="UnknownId" />
+
+
+</RelativeLayout>

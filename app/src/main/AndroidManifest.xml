@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="eu.alfo.codinginflow_database">
+    package="eu.alfo.rtu_pit">
 
     <application
         android:allowBackup="true"
@@ -9,14 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StartingScreenActivity">
+        <activity android:name="eu.alfo.rtu_pit.StartingScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".QuizActivity"/>
+        <activity android:name="eu.alfo.rtu_pit.QuizActivity"/>
+
+        <activity android:name="eu.alfo.rtu_pit.GroupHeadActivity"></activity>
+        <activity android:name="eu.alfo.rtu_pit.LoginActivity"></activity>
+
+
+        <activity android:name="eu.alfo.rtu_pit.RTU_TeacherActivity"></activity>
+        <activity android:name="eu.alfo.rtu_pit.RTU_TeacherTestActivity"></activity>
+        <activity android:name="eu.alfo.rtu_pit.RTU_TeacherEditTestActivity"></activity>
+
+        <activity android:name="eu.alfo.rtu_pit.RTU_TeacherMaterialActivity"></activity>
+        <activity android:name="eu.alfo.rtu_pit.RTU_TeacherAddMaterialActivity"></activity>
+
+
+
     </application>
 
 </manifest>
