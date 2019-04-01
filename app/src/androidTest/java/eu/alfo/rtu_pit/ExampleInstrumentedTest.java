@@ -1,4 +1,4 @@
-package eu.alfo.codinginflow_database;
+package eu.alfo.rtu_pit;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

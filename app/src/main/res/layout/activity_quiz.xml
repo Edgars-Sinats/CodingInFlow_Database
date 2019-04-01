@@ -56,11 +56,11 @@
     <TextView
         android:id="@+id/text_view_question"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/radio_group"
-        android:layout_marginBottom="16dp"
+        android:layout_height="97dp"
+        android:layout_below="@+id/text_view_difficulty"
+        android:layout_centerHorizontal="true"
         android:freezesText="true"
-        android:text="Here will be the question text\nHere will be the question text\nHere will be the question text"
+        android:text="Here will be the question text\n Here will be the question text\n Here will be the question text"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="20sp" />
@@ -68,8 +68,10 @@
     <RadioGroup
         android:id="@+id/radio_group"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true">
+        android:layout_height="204dp"
+        android:layout_above="@+id/button_confirm_next"
+
+        android:layout_alignStart="@+id/text_view_score">
 
         <RadioButton
             android:id="@+id/radio_button1"
@@ -92,15 +94,41 @@
             android:freezesText="true"
             android:text="Option 3" />
 
+        <RadioButton
+            android:id="@+id/radio_button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:freezesText="true"
+            android:text="Option 4" />
+
     </RadioGroup>
 
     <Button
         android:id="@+id/button_confirm_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/radio_group"
-        android:layout_marginTop="16dp"
+        android:layout_above="@+id/text_View_trueTimes"
+        android:layout_centerHorizontal="true"
         android:freezesText="true"
         android:text="Confirm" />
+
+    <TextView
+        android:id="@+id/text_View_trueTimes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/text_View_answeredTimes"
+        android:layout_alignStart="@+id/text_view_score"
+        android:text="Answered true : 0" />
+
+    <TextView
+        android:id="@+id/text_View_answeredTimes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/text_view_score"
+        android:layout_marginBottom="21dp"
+        android:text="Answered times : 0" />
+
+
 
 </RelativeLayout>

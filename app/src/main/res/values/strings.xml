@@ -1,3 +1,80 @@
 <resources>
-    <string name="app_name">CodingInFlow_Database</string>
+    <string name="app_name">Test School</string>
+
+    <string-array name="number09">
+        <item tag= "zero">0</item>
+        <item tag= "1">1</item>
+        <item tag= "2">2</item>
+        <item tag= "3">3</item>
+        <item tag= "4">4</item>
+        <item tag= "5">5</item>
+        <item tag= "6">6</item>
+        <item tag= "7">7</item>
+        <item tag= "8">8</item>
+        <item tag= "9">9</item>
+    </string-array>
+
+    <string-array name="numberOfQuestion">
+        <item>1</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>30</item>
+    </string-array>
+
+    <string name="GroupHead">Vaditajs</string>
+    <string name="User">Lietotājs</string>
+    <string name="TestType">Testa veids</string>
+    <string name="HightScore">Rezūltāts: </string>
+    <string name="Topic">Tēma</string>
+    <string name="Time">Laiks</string>
+    <string name="Answered">Atbildēts: ...</string>
+    <string name="add_to_my_question_list">Add to My Question List</string>
+
+
+    <string-array name="TestExample">
+        <item>FREE</item>
+        <item>NATIONAL</item>
+        <item>MY TEST</item>
+        <item>TOP TEST</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="NacionalTest">
+        <item>LATVIAN</item>
+        <item>ESTONIAN</item>
+        <item>GERMAN</item>
+        <item>UNITED KINGDOM</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="TestType">
+        <item>Nacional Test</item>
+        <item>Free Test</item>
+        <item>Official Test</item>
+    </string-array>
+
+    <string-array name="Answered">
+        <item>NON</item>
+        <item>WRONG</item>
+        <item>TRUE</item>
+        <item></item>
+    </string-array>
+
+    <string-array name="Time">
+        <item>Unlimited</item>
+        <item>30. sek.</item>
+        <item>60. sec</item>
+        <item>90. sec</item>
+        <item>120.s.</item>
+    </string-array>
+
+
+    <string name="DialogBoxLogIn_FAILED">Dialoglodziņš NEIZDEVIES</string>
+    <string name="DialogBoxLogIn_SUCCES">Dialoglodziņš VEIKSMĪGS</string>
+    <!--<string name=""></string>-->
+    <!--<string name=""></string>-->
+
+
+
 </resources>
