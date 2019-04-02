@@ -1,4 +1,4 @@
-package eu.alfo.rtu_pit;
+package eu.alfo.rtu_pit.db;
 
 //import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import eu.alfo.rtu_pit.R;
 
 public class CustomAdapter extends BaseAdapter{
     Context context;

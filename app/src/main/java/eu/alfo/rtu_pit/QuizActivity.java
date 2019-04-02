@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Locale;
 
+import eu.alfo.rtu_pit.db.Question;
+import eu.alfo.rtu_pit.db.QuizDbHelper;
+
 public class QuizActivity extends AppCompatActivity {
     public static final String EXTRA_SCORE = "extraScore";
     private static final long COUNTDOWN_IN_MILLIS = 30000;

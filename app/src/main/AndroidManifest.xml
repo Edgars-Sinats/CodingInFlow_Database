@@ -18,16 +18,16 @@
         </activity>
         <activity android:name="eu.alfo.rtu_pit.QuizActivity"/>
 
-        <activity android:name="eu.alfo.rtu_pit.GroupHeadActivity"></activity>
+        <activity android:name="eu.alfo.rtu_pit.rtu_teacher.GroupHeadActivity"></activity>
         <activity android:name="eu.alfo.rtu_pit.LoginActivity"></activity>
 
 
-        <activity android:name="eu.alfo.rtu_pit.RTU_TeacherActivity"></activity>
-        <activity android:name="eu.alfo.rtu_pit.RTU_TeacherTestActivity"></activity>
-        <activity android:name="eu.alfo.rtu_pit.RTU_TeacherEditTestActivity"></activity>
+        <activity android:name="eu.alfo.rtu_pit.rtu_teacher.RTU_TeacherActivity"></activity>
+        <activity android:name="eu.alfo.rtu_pit.rtu_teacher.RTU_TeacherTestActivity"></activity>
+        <activity android:name="eu.alfo.rtu_pit.rtu_teacher.RTU_TeacherEditTestActivity"></activity>
 
-        <activity android:name="eu.alfo.rtu_pit.RTU_TeacherMaterialActivity"></activity>
-        <activity android:name="eu.alfo.rtu_pit.RTU_TeacherAddMaterialActivity"></activity>
+        <activity android:name="eu.alfo.rtu_pit.rtu_teacher.RTU_TeacherMaterialActivity"></activity>
+        <activity android:name="eu.alfo.rtu_pit.rtu_teacher.RTU_TeacherAddMaterialActivity"></activity>
 
 
 

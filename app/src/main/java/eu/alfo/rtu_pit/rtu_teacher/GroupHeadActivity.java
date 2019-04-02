@@ -1,4 +1,4 @@
-package eu.alfo.rtu_pit;
+package eu.alfo.rtu_pit.rtu_teacher;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -14,6 +14,12 @@ import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import eu.alfo.rtu_pit.db.Category;
+import eu.alfo.rtu_pit.db.CustomAdapter;
+import eu.alfo.rtu_pit.db.QuizDbHelper;
+import eu.alfo.rtu_pit.R;
+import eu.alfo.rtu_pit.StartingScreenActivity;
 
 public class GroupHeadActivity extends AppCompatActivity{
 

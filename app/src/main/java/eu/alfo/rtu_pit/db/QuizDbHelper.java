@@ -1,4 +1,4 @@
-package eu.alfo.rtu_pit;
+package eu.alfo.rtu_pit.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,7 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import eu.alfo.rtu_pit.QuizContract.*;
+import eu.alfo.rtu_pit.db_rtu.RTU_Contract;
+import eu.alfo.rtu_pit.db.QuizContract.*;
+import io.bloco.faker.Faker;
 
 
 import java.util.ArrayList;
@@ -18,7 +20,7 @@ import static android.content.ContentValues.TAG;
 
 public class QuizDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "HUNTTEST.db"; //Change name if you want to test
-    private static final int DATABASE_VERSION = 9; //increase(aTimes-12)(7)
+    private static final int DATABASE_VERSION = 11; //increase(aTimes-12)(7)
 
     private static QuizDbHelper instance;
 
@@ -66,19 +68,30 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         fillCategoriesTable();
         fillQuestionsTable();
 
-        String querries[] = NewsContract.getSQLQuerry();
+        String querries[] = RTU_Contract.getSQLQuerry();
 
 
         for(int i =0; i<querries.length; i++){
             db.execSQL(querries[i]);
         }
-        int a = 0;
+
+        fakeData();
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + CategoriesTable.TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + QuestionsTable.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + RTU_Contract.GradesTable.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + RTU_Contract.StudentsTable.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + RTU_Contract.StudentTeacherRelation.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + RTU_Contract.TeachersTable.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + RTU_Contract.SubjectsTable.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + RTU_Contract.TeacherSubjectRelation.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + RTU_Contract.NewsTable.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + RTU_Contract.CoursesTable.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + RTU_Contract.CoursesNewsRelation.TABLE_NAME);
+
         onCreate(db);
     }
 
@@ -89,7 +102,21 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         db.setForeignKeyConstraintsEnabled(true);
     }
 
+    public void fakeData(){
+        Faker faker = new Faker();
 
+
+
+        for(int i=0; i<10;i++){
+
+            String name = faker.name.firstName().replaceAll("\'","");;
+            String surname = faker.name.lastName().replaceAll("\'","");;
+            String querry = "INSERT INTO Teacher (Teacher_Name, Teacher_Surname) VALUES ('" + name + "', '" + surname + "');";
+
+            db.execSQL(querry);
+        }
+
+    }
 
     private void fillCategoriesTable() {
         Category c1 = new Category("Programming");

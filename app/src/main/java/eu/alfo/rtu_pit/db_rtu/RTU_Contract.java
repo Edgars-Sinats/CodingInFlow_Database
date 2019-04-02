@@ -1,8 +1,8 @@
-package eu.alfo.rtu_pit;
+package eu.alfo.rtu_pit.db_rtu;
 
 import android.provider.BaseColumns;
 
-public final class NewsContract {
+public final class RTU_Contract {
 
 //    private QuizContract() {
 //    }

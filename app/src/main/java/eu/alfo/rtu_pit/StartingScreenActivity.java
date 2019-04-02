@@ -12,6 +12,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import eu.alfo.rtu_pit.db.Category;
+import eu.alfo.rtu_pit.db.Question;
+import eu.alfo.rtu_pit.db.QuizDbHelper;
+import eu.alfo.rtu_pit.rtu_teacher.GroupHeadActivity;
+
 public class StartingScreenActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_QUIZ = 1;
     public static final String EXTRA_CATEGORY_ID = "extraCategoryID";

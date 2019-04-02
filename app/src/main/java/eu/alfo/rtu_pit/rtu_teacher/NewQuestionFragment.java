@@ -1,4 +1,4 @@
-package eu.alfo.rtu_pit;
+package eu.alfo.rtu_pit.rtu_teacher;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import eu.alfo.rtu_pit.R;
 
 public class NewQuestionFragment extends Fragment{
     private Button buttonMake;

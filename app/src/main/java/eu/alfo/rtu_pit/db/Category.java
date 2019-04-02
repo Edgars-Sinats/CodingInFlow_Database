@@ -1,4 +1,4 @@
-package eu.alfo.rtu_pit;
+package eu.alfo.rtu_pit.db;
 
 public class   Category {
     public static final int PROGRAMMING = 1;

@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import eu.alfo.rtu_pit.rtu_teacher.RTU_TeacherActivity;
+
 public class LoginActivity extends AppCompatActivity{
 
     private EditText editTextPassword;
