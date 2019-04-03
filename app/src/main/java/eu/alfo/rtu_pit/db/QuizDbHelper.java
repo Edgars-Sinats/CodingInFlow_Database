@@ -105,8 +105,6 @@ public class QuizDbHelper extends SQLiteOpenHelper {
     public void fakeData(){
         Faker faker = new Faker();
 
-
-
         for(int i=0; i<10;i++){
 
             String name = faker.name.firstName().replaceAll("\'","");;
@@ -198,7 +196,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 
 
 
-    private void addQuestion(Question question) {
+    public void addQuestion(Question question) {
         ContentValues cv = new ContentValues();
         cv.put(QuestionsTable.COLUMN_QUESTION, question.getQuestion());
         cv.put(QuestionsTable.COLUMN_OPTION1, question.getOption11());

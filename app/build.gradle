@@ -20,6 +20,16 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
+    sourceSets {
+        main {
+            res.srcDirs = [
+                    'src/main/res/layout/teacher',
+                    'src/main/res/layout/student',
+                    'src/main/res/layout',
+                    'src/main/res'
+            ]
+        }
+    }
 }
 
 repositories {

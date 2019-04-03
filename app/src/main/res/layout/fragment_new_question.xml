@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_margin="10dp"
-    android:layout_height="390dp"
+    android:layout_height="wrap_content"
     android:background="@color/colorBackground">
 
     <TextView
@@ -24,74 +24,153 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/textViewNewQuestBanner"
         android:layout_marginTop="15dp"
-        android:text="Ievadiet jautājumu" />
+        android:hint="Ievadiet jautājumu" />
 
-    <EditText
-        android:id="@+id/editTextAns1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@id/editTextQuest"
+    <LinearLayout android:id="@+id/linLayTQ1"
         android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:padding="3dp"
         android:layout_centerVertical="true"
-        android:clickable="true"
-        android:text="Atbile NR.1" />
+        android:layout_below="@id/editTextQuest">
 
-    <EditText
-        android:id="@+id/editTextAns2"
+        <EditText
+            android:id="@+id/editTextAns1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:hint="Atbile NR.1" />
+
+        <Switch
+            android:id="@+id/switchAcceptAns1"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/linLayTQ2"
+        android:layout_marginTop="3dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@id/editTextAns1"
-        android:layout_marginTop="5dp"
+        android:padding="3dp"
         android:layout_centerVertical="true"
-        android:clickable="true"
-        android:text="Atbile NR.2" />
-    <EditText
-        android:id="@+id/editTextAns3"
+        android:layout_below="@id/linLayTQ1">
+
+        <EditText
+            android:id="@+id/editTextAns2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:hint="Atbile NR.2" />
+
+            <Switch
+            android:id="@+id/switchAcceptAns2"
+            android:layout_width="60dp"
+            android:checked="true"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/linLayTQ3"
+        android:layout_marginTop="3dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@id/editTextAns2"
-        android:layout_marginTop="5dp"
+        android:padding="3dp"
         android:layout_centerVertical="true"
-        android:clickable="true"
-        android:text="Atbile NR.3" />
-    <EditText
-        android:id="@+id/editTextAns4"
+        android:layout_below="@id/linLayTQ2">
+
+        <EditText
+            android:id="@+id/editTextAns3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:hint="Atbile NR.3" />
+
+        <Switch
+            android:id="@+id/switchAcceptAns3"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/linLayTQ4"
+        android:layout_marginTop="3dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@id/editTextAns3"
-        android:layout_marginTop="5dp"
+        android:padding="3dp"
         android:layout_centerVertical="true"
-        android:clickable="true"
-        android:text="Atbile NR.4" />
+        android:layout_below="@id/linLayTQ3">
+
+        <EditText
+            android:id="@+id/editTextAns4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:hint="Atbile NR.4" />
+
+        <Switch
+            android:id="@+id/switchAcceptAns4"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewNewTopic"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/linLayTQ4"
+        android:layout_marginTop="10dp"
+        android:text="Tēmas pievienošana" />
+
+    <Spinner
+        android:id="@+id/spinnerNewTopic"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_alignBottom="@id/textViewNewTopic"
+        android:layout_toEndOf="@id/textViewNewTopic" />
+
+    <TextView android:id="@+id/textViewQ_AddToMyList"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_toStartOf="@id/imageViewQ_AddToMyList"
+        android:layout_alignBottom="@id/textViewNewTopic"
+        android:text="Saglabāt: "
+        />
+
+    <ImageView
+        android:id="@+id/imageViewQ_AddToMyList"
+        android:layout_width="64dp"
+        android:layout_height="31dp"
+        android:layout_alignBottom="@id/spinnerNewTopic"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:id="@+id/buttonCreateNewQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@id/textViewNewTopic"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
         android:text="Izeidot" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="55dp"
-        android:layout_marginStart="147dp"></Spinner>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="31dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/_dynamic"
-        android:text="Tēmas pievienošana"
-        tools:ignore="UnknownId" />
-
 
 </RelativeLayout>
