@@ -25,9 +25,14 @@
         <activity android:name="eu.alfo.rtu_pit.rtu_teacher.RTU_TeacherActivity"></activity>
         <activity android:name="eu.alfo.rtu_pit.rtu_teacher.RTU_TeacherTestActivity"></activity>
         <activity android:name="eu.alfo.rtu_pit.rtu_teacher.RTU_TeacherEditTestActivity"></activity>
+        <activity android:name="eu.alfo.rtu_pit.rtu_teacher.NewQuestionActivity"></activity>
 
         <activity android:name="eu.alfo.rtu_pit.rtu_teacher.RTU_TeacherMaterialActivity"></activity>
         <activity android:name="eu.alfo.rtu_pit.rtu_teacher.RTU_TeacherAddMaterialActivity"></activity>
+        <activity android:name="eu.alfo.rtu_pit.rtu_teacher.RTU_TeacherEditMaterialActivity"></activity>
+        <activity android:name="eu.alfo.rtu_pit.DebugingActivity"></activity>
+
+
 
 
 

@@ -50,6 +50,7 @@ public final class RTU_Contract {
         public static final String COLUMN_SUBJECT_ID = "Subject_ID";
     }
 
+    //News portal, latest story,
     public static class NewsTable implements BaseColumns {
         public static final String TABLE_NAME = "News";
         public static final String COLUMN_ID = "News_ID";

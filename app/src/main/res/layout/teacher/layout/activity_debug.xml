@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="15dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout android:id="@+id/linLayDebugingFirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        >
+
+        <TextView android:id="@+id/textViewChosenTable"
+            android:hint="Izvēlies tabulu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/spinnerTableChoose"
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/linLayDebugingSecond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="10dp">
+
+        <EditText android:id="@+id/textViewChosenNumber"
+            android:hint="Ievadi ierakstu skaitu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/buttonCreateDbInserts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Izveidot" />
+
+    <TextView
+        android:id="@+id/textViewDebugInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Info" />
+
+
+</LinearLayout>

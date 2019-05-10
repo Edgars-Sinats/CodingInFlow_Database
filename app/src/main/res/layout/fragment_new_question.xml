@@ -18,7 +18,7 @@
         android:text="Jauna jautājuma izveide" />
 
     <EditText
-        android:id="@+id/editTextQuest"
+        android:id="@+id/editTextNewQuest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -26,148 +26,179 @@
         android:layout_marginTop="15dp"
         android:hint="Ievadiet jautājumu" />
 
-    <LinearLayout android:id="@+id/linLayTQ1"
-        android:layout_marginTop="15dp"
-        android:layout_width="match_parent"
+    <LinearLayout android:id="@+id/linLayEditText"
         android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/linLayRadioG"
+        android:layout_marginTop="15dp"
         android:padding="3dp"
         android:layout_centerVertical="true"
-        android:layout_below="@id/editTextQuest">
+        android:layout_below="@id/editTextNewQuest">
 
         <EditText
-            android:id="@+id/editTextAns1"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:id="@+id/editTextNewAns1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
             android:hint="Atbile NR.1" />
 
-        <Switch
-            android:id="@+id/switchAcceptAns1"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            />
-
-    </LinearLayout>
-
-    <LinearLayout android:id="@+id/linLayTQ2"
-        android:layout_marginTop="3dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:padding="3dp"
-        android:layout_centerVertical="true"
-        android:layout_below="@id/linLayTQ1">
-
         <EditText
-            android:id="@+id/editTextAns2"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:id="@+id/editTextNewAns2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
-            android:hint="Atbile NR.2" />
-
-            <Switch
-            android:id="@+id/switchAcceptAns2"
-            android:layout_width="60dp"
-            android:checked="true"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
-
-    </LinearLayout>
-
-    <LinearLayout android:id="@+id/linLayTQ3"
-        android:layout_marginTop="3dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:padding="3dp"
-        android:layout_centerVertical="true"
-        android:layout_below="@id/linLayTQ2">
+            android:hint="Atbile NR.2"
+            />
 
         <EditText
-            android:id="@+id/editTextAns3"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:id="@+id/editTextNewAns3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
             android:hint="Atbile NR.3" />
 
-        <Switch
-            android:id="@+id/switchAcceptAns3"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
-
-    </LinearLayout>
-
-    <LinearLayout android:id="@+id/linLayTQ4"
-        android:layout_marginTop="3dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:padding="3dp"
-        android:layout_centerVertical="true"
-        android:layout_below="@id/linLayTQ3">
-
         <EditText
-            android:id="@+id/editTextAns4"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:id="@+id/editTextNewAns4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
             android:hint="Atbile NR.4" />
 
-        <Switch
-            android:id="@+id/switchAcceptAns4"
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linLayRadioG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:padding="3dp">
+
+        <RadioGroup android:id="@+id/radio_group_Add"
             android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/RadioB_AcceptAns1"
+                android:layout_width="60dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center" />
+
+            <RadioButton
+                android:id="@+id/RadioB_AcceptAns2"
+                android:layout_width="60dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center" />
+
+            <RadioButton
+                android:id="@+id/RadioB_AcceptAns3"
+                android:layout_width="60dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center" />
+
+            <RadioButton
+                android:id="@+id/RadioB_AcceptAns4"
+                android:layout_width="60dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center" />
+
+        </RadioGroup>
 
     </LinearLayout>
+
+
+    <!--    Starting old version    -->
+    <!--        Commit              -->
+    <!--<LinearLayout android:id="@+id/linLayTQ1"-->
+        <!--android:layout_marginTop="15dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:padding="3dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_below="@id/editTextQuest">-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout android:id="@+id/linLayTQ2"-->
+        <!--android:layout_marginTop="3dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:padding="3dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_below="@id/linLayTQ1">-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout android:id="@+id/linLayTQ3"-->
+        <!--android:layout_marginTop="3dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:padding="3dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_below="@id/linLayTQ2">-->
+
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout android:id="@+id/linLayTQ4"-->
+        <!--android:layout_marginTop="3dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:padding="3dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_below="@id/linLayTQ3">-->
+
+    <!--</LinearLayout>-->
 
     <TextView
         android:id="@+id/textViewNewTopic"
         android:layout_width="wrap_content"
         android:layout_height="31dp"
         android:layout_alignParentStart="true"
-        android:layout_below="@id/linLayTQ4"
-        android:layout_marginTop="10dp"
-        android:text="Tēmas pievienošana" />
+        android:layout_below="@+id/linLayEditText"
+        android:text="Tēmas izvēle: " />
 
     <Spinner
         android:id="@+id/spinnerNewTopic"
         android:layout_width="wrap_content"
         android:layout_height="31dp"
-        android:layout_alignBottom="@id/textViewNewTopic"
+        android:layout_below="@id/imageViewQ_AddToMyList"
+
         android:layout_toEndOf="@id/textViewNewTopic" />
 
-    <TextView android:id="@+id/textViewQ_AddToMyList"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textViewQ_AddToMyList"
+        android:layout_width="81dp"
         android:layout_height="31dp"
-        android:layout_toStartOf="@id/imageViewQ_AddToMyList"
         android:layout_alignBottom="@id/textViewNewTopic"
-        android:text="Saglabāt: "
-        />
+        android:layout_toStartOf="@id/imageViewQ_AddToMyList"
+        android:text="Saglabāt: " />
 
     <ImageView
         android:id="@+id/imageViewQ_AddToMyList"
         android:layout_width="64dp"
         android:layout_height="31dp"
-        android:layout_alignBottom="@id/spinnerNewTopic"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignBottom="@id/textViewNewTopic"
+        android:layout_alignParentEnd="true"
+        android:clickable="true"
+        android:focusable="true" />
 
     <Button
         android:id="@+id/buttonCreateNewQuestion"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewNewTopic"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/spinnerNewTopic"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"

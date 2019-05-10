@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import eu.alfo.rtu_pit.db_rtu.DataGenerator;
 import eu.alfo.rtu_pit.db_rtu.RTU_Contract;
 import eu.alfo.rtu_pit.db.QuizContract.*;
 import io.bloco.faker.Faker;
@@ -20,7 +21,7 @@ import static android.content.ContentValues.TAG;
 
 public class QuizDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "HUNTTEST.db"; //Change name if you want to test
-    private static final int DATABASE_VERSION = 11; //increase(aTimes-12)(7)
+    private static final int DATABASE_VERSION = 13; //increase(aTimes-12)(7)
 
     private static QuizDbHelper instance;
 
@@ -75,7 +76,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
             db.execSQL(querries[i]);
         }
 
-        fakeData();
+        fakeData(db);
     }
 
     @Override
@@ -102,19 +103,11 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         db.setForeignKeyConstraintsEnabled(true);
     }
 
-    public void fakeData(){
-        Faker faker = new Faker();
-
-        for(int i=0; i<10;i++){
-
-            String name = faker.name.firstName().replaceAll("\'","");;
-            String surname = faker.name.lastName().replaceAll("\'","");;
-            String querry = "INSERT INTO Teacher (Teacher_Name, Teacher_Surname) VALUES ('" + name + "', '" + surname + "');";
-
-            db.execSQL(querry);
-        }
-
+    public void fakeData(SQLiteDatabase db){
+        DataGenerator dataGenerator = new DataGenerator(db);
     }
+
+
 
     private void fillCategoriesTable() {
         Category c1 = new Category("Programming");
@@ -189,7 +182,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
 //        db.update(QuestionsTable.TABLE_NAME, cv, "True_Atbilde", null );
             Log.d(TAG, "updateTrueTime: query: " + query);
             Log.d(TAG, "updateTrueTimes: Setting True_question_Listes to " + question.getTrueTimes());
-            db.execSQL(query);    
+            db.execSQL(query);
         }
         
     }
@@ -215,14 +208,12 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         db = getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM " + CategoriesTable.TABLE_NAME, null);
 
-        if (c.moveToFirst()) {
-            do {
+        while (c.moveToNext()) {
                 Category category = new Category();
                 category.setId(c.getInt(c.getColumnIndex(CategoriesTable._ID)));
                 category.setName(c.getString(c.getColumnIndex(CategoriesTable.COLUMN_NAME)));
                 categoryList.add(category);
-            } while (c.moveToNext());
-        }
+            }
 
         c.close();
         return categoryList;

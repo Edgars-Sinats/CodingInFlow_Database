@@ -14,29 +14,28 @@
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/buttonCalendar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kalendārs"
-            android:layout_marginRight="35dp"
-            tools:layout_editor_absoluteX="26dp"
-            tools:layout_editor_absoluteY="16dp" />
+        <!--<Button-->
+            <!--android:id="@+id/buttonCalendar"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Kalendārs"-->
+            <!--android:layout_marginRight="35dp"-->
+            <!--tools:layout_editor_absoluteX="26dp"-->
+            <!--tools:layout_editor_absoluteY="16dp" />-->
 
-        <Button
-            android:id="@+id/buttonDocuments"
+        <Spinner
+            android:id="@+id/spinnerDocuments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Materiāli"
             tools:layout_editor_absoluteX="147dp"
-            android:layout_marginRight="35dp"
+            android:entries="@array/Material"
             tools:layout_editor_absoluteY="16dp" />
 
-        <Button
-            android:id="@+id/buttonTest"
+        <Spinner
+            android:id="@+id/spinnerTest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Testi"
+            android:entries="@array/Test"
             tools:layout_editor_absoluteX="259dp"
             tools:layout_editor_absoluteY="16dp" />
 
@@ -67,6 +66,22 @@
             android:footerDividersEnabled="false" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewDocTeach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/LinLayActGroup1"
+        android:layout_centerVertical="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewTestTeach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/LinLayActGroup1"
+        android:layout_centerVertical="true"
+        android:text="TextView" />
 
 
 </RelativeLayout>

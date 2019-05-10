@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_margin="10dp"
-    android:layout_height="390dp"
+    android:layout_height="wrap_content"
     android:background="@color/colorBackground">
 
     <TextView
@@ -46,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/ssDAS"
         android:layout_marginTop="20dp"
+        android:layout_toStartOf="@id/linLayRadioG"
         android:orientation="horizontal">
 
         <EditText
@@ -60,7 +61,7 @@
             android:id="@+id/editTextAns11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:clickable="true"
             android:text="Jaunā atbile NR.1" />
 
@@ -70,7 +71,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ssDAK1"
-
+        android:layout_toStartOf="@id/linLayRadioG"
         android:orientation="horizontal">
 
         <EditText
@@ -85,7 +86,7 @@
             android:id="@+id/editTextAns22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:clickable="true"
             android:text="Jaunā atbile NR.2" />
 
@@ -95,7 +96,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ssDAK2"
-
+        android:layout_toStartOf="@id/linLayRadioG"
         android:orientation="horizontal">
 
         <EditText
@@ -110,7 +111,7 @@
             android:id="@+id/editTextAns33"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:clickable="true"
             android:text="Jaunā atbile NR.3" />
 
@@ -120,6 +121,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ssDAK3"
+        android:layout_toStartOf="@id/linLayRadioG"
         android:orientation="horizontal">
 
         <EditText
@@ -134,60 +136,60 @@
             android:id="@+id/editTextAns44"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:clickable="true"
             android:text="Jaunā atbile NR.4" />
 
     </LinearLayout>
 
 
-
-
-    <!--<EditText-->
-        <!--android:id="@+id/editTextAns2"-->
-        <!--android:layout_width="111dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_below="@id/editTextAns1"-->
-        <!--android:layout_centerVertical="true"-->
-        <!--android:layout_marginTop="5dp"-->
-        <!--android:clickable="true"-->
-        <!--android:text="Atbile NR.2" />-->
-
-    <!--<EditText-->
-        <!--android:id="@+id/editTextAns3"-->
-        <!--android:layout_width="110dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_below="@id/editTextAns2"-->
-        <!--android:layout_centerVertical="true"-->
-        <!--android:layout_marginTop="5dp"-->
-        <!--android:clickable="true"-->
-        <!--android:text="Atbile NR.3" />-->
-
-    <!--<EditText-->
-        <!--android:id="@+id/editTextAns4"-->
-        <!--android:layout_width="111dp"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_below="@id/editTextAns3"-->
-        <!--android:layout_centerVertical="true"-->
-        <!--android:layout_marginTop="5dp"-->
-        <!--android:clickable="true"-->
-        <!--android:text="Atbile NR.4" />-->
-
-    <Button
-        android:id="@+id/buttonCreateNewQuestion"
+    <LinearLayout
+        android:id="@+id/linLayRadioG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Mainīt" />
+        android:layout_above="@+id/_dynamic"
+        android:layout_alignParentEnd="true"
+        android:orientation="vertical"
+        android:padding="3dp">
+
+        <RadioGroup
+            android:id="@+id/radio_group_Add"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/RadioB_AcceptAns1"
+                android:layout_width="60dp"
+                android:layout_height="66dp"
+                android:layout_gravity="center" />
+
+            <RadioButton
+                android:id="@+id/RadioB_AcceptAns2"
+                android:layout_width="60dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center" />
+
+            <RadioButton
+                android:id="@+id/RadioB_AcceptAns3"
+                android:layout_width="60dp"
+                android:layout_height="66dp"
+                android:layout_gravity="center" />
+
+            <RadioButton
+                android:id="@+id/RadioB_AcceptAns4"
+                android:layout_width="60dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="34dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@id/ssDAK4"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="55dp"
         android:layout_marginStart="147dp"></Spinner>
@@ -197,9 +199,17 @@
         android:layout_width="wrap_content"
         android:layout_height="31dp"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/_dynamic"
+        android:layout_below="@id/ssDAK4"
         android:text="Tēmas apstiprināšana"
         tools:ignore="UnknownId" />
+
+    <Button
+        android:id="@+id/buttonCreateNewQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Mainīt" />
 
 
 </RelativeLayout>

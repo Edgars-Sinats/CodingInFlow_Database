@@ -168,6 +168,22 @@
         android:layout_alignStart="@+id/LinLayScore"
         android:text="LogIn" />
 
+    <Button
+        android:id="@+id/buttonLogDebug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_start_quiz"
+        android:layout_alignStart="@+id/LinLayScore"
+        android:text="Debug" />
+
+    <Button
+        android:id="@+id/buttonMakeTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/LinLayActGroup1"
+        android:layout_alignTop="@+id/button_start_quiz"
+        android:text="M_Test" />
+
 </RelativeLayout>
 
 

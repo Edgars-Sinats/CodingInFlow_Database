@@ -16,6 +16,7 @@ import eu.alfo.rtu_pit.db.Category;
 import eu.alfo.rtu_pit.db.Question;
 import eu.alfo.rtu_pit.db.QuizDbHelper;
 import eu.alfo.rtu_pit.rtu_teacher.GroupHeadActivity;
+import eu.alfo.rtu_pit.rtu_teacher.NewQuestionActivity;
 
 public class StartingScreenActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_QUIZ = 1;
@@ -35,6 +36,8 @@ public class StartingScreenActivity extends AppCompatActivity {
 
     private Button buttonGroupManager;
     private Button buttonLogIn;
+    private Button buttonDebug;
+    private Button buttonMakeT;
 
     private int highscore;
 
@@ -51,6 +54,8 @@ public class StartingScreenActivity extends AppCompatActivity {
         spinnerAnswered = findViewById(R.id.spinner_Answered);
 
         buttonLogIn = findViewById(R.id.buttonLogIn);
+        buttonDebug = findViewById(R.id.buttonLogDebug);
+        buttonMakeT = findViewById(R.id.buttonMakeTest);
 
         loadCategories();
 //        loadDifficultyLevels();
@@ -82,6 +87,29 @@ public class StartingScreenActivity extends AppCompatActivity {
             }
         });
 
+        buttonLogIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StartingScreenActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonDebug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StartingScreenActivity.this, DebugingActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonMakeT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(StartingScreenActivity.this, NewQuestionActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //Dropdown
 
