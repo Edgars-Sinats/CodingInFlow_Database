@@ -41,26 +41,30 @@
 
     </LinearLayout>
 
-    <LinearLayout android:id="@+id/LinLayActGroup2"
+    <LinearLayout
+        android:id="@+id/LinLayActGroup2"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="343dp"
+        android:layout_below="@id/LinLayActGroup1"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_below="@id/LinLayActGroup1"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:paddingStart="150dp"
-            android:text="Jaunumi"/>
+            android:text="Jaunumi"
+            android:textStyle="bold" />
 
         <ListView
             android:id="@+id/listViewOneObject"
             android:layout_width="fill_parent"
-            android:layout_height="match_parent"
+            android:layout_height="234dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="63dp"
             android:divider="@color/material_blue_grey_800"
             android:dividerHeight="2dp"
             android:footerDividersEnabled="false" />
@@ -72,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/LinLayActGroup1"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/LinLayActGroup2"
         android:text="TextView" />
 
     <TextView
@@ -80,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/LinLayActGroup1"
-        android:layout_centerVertical="true"
+        android:layout_alignTop="@+id/textViewDocTeach"
         android:text="TextView" />
 
 

@@ -1,9 +1,9 @@
-package eu.alfo.rtu_pit;
+package eu.alfo.rtu_pit.rtu_student;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -12,13 +12,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import eu.alfo.rtu_pit.QuizActivity;
+import eu.alfo.rtu_pit.R;
 import eu.alfo.rtu_pit.db.Category;
 import eu.alfo.rtu_pit.db.QuizDbHelper;
-import eu.alfo.rtu_pit.debuging.DebugingActivity;
-import eu.alfo.rtu_pit.rtu_teacher.GroupHeadActivity;
-import eu.alfo.rtu_pit.rtu_teacher.NewQuestionActivity;
 
-public class StartingScreenActivity extends AppCompatActivity {
+public class StudentActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_QUIZ = 1;
     public static final String EXTRA_CATEGORY_ID = "extraCategoryID";
     public static final String EXTRA_CATEGORY_NAME = "extraCategoryName";
@@ -38,9 +37,7 @@ public class StartingScreenActivity extends AppCompatActivity {
     private Button buttonLogIn;
     private Button buttonDebug;
     private Button buttonMakeT;
-
-    private TextView textViewTestType;
-    private Spinner spinnerTestType;
+    private Button buttonUser;
 
     private int highscore;
 
@@ -53,25 +50,26 @@ public class StartingScreenActivity extends AppCompatActivity {
 
         textViewHighscore = findViewById(R.id.text_view_highscore);
         spinnerCategory = findViewById(R.id.spinner_category2);
-//        spinnerDifficulty = findViewById(R.id.spinner_category2);
         spinnerNumberOfQuestion = findViewById(R.id.spinner_NumberOfQuestion);
-        buttonGroupManager = findViewById(R.id.buttonGroupHead);
         spinnerAnswered = findViewById(R.id.spinner_Answered);
-
-//        @ToDo make adapter for this>>
-        spinnerTestType= findViewById(R.id.spinner_testExample);
-        textViewTestType = findViewById(R.id.textView_testExample);
-
-        buttonLogIn = findViewById(R.id.buttonLogIn);
         buttonDebug = findViewById(R.id.buttonLogDebug);
+        buttonGroupManager = findViewById(R.id.buttonGroupHead);
+        buttonLogIn = findViewById(R.id.buttonLogIn);
         buttonMakeT = findViewById(R.id.buttonMakeTest);
+        buttonUser = findViewById(R.id.buttonUser);
+
 
         loadCategories();
 //        loadDifficultyLevels();
         loadHighscore();
-        LoadMumberOfQuestions();
+        LoadNumberOfQuestions();
         loadAnsweredType();
-        loadTestType();
+
+        buttonUser.setVisibility(View.GONE);
+        buttonDebug.setVisibility(View.GONE);
+        buttonGroupManager.setVisibility(View.GONE);
+        buttonLogIn.setVisibility(View.GONE);
+        buttonMakeT.setVisibility(View.INVISIBLE);
 
         Button buttonStartQuiz = findViewById(R.id.button_start_quiz);
         buttonStartQuiz.setOnClickListener(new View.OnClickListener() {
@@ -81,43 +79,10 @@ public class StartingScreenActivity extends AppCompatActivity {
             }
         });
 
-        buttonGroupManager.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(StartingScreenActivity.this, GroupHeadActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        buttonLogIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(StartingScreenActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        buttonDebug.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(StartingScreenActivity.this, DebugingActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        buttonMakeT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(StartingScreenActivity.this, NewQuestionActivity.class);
-                startActivity(intent);
-            }
-        });
-
         //Dropdown
-
     }
 
-    private void LoadMumberOfQuestions(){
+    private void LoadNumberOfQuestions(){
         String[] mas = getResources().getStringArray(R.array.numberOfQuestion);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, mas);
@@ -132,7 +97,7 @@ public class StartingScreenActivity extends AppCompatActivity {
         String categoryName = selectedCategory.getName();
 //        String difficulty = spinnerDifficulty.getSelectedItem().toString();
 
-        Intent intent = new Intent(StartingScreenActivity.this, QuizActivity.class);
+        Intent intent = new Intent(StudentActivity.this, QuizActivity.class);
         intent.putExtra(EXTRA_CATEGORY_ID, categoryID);
         intent.putExtra(EXTRA_CATEGORY_NAME, categoryName);
         intent.putExtra(EXTRA_NUMOFQUEST, Integer.valueOf(spinnerNumberOfQuestion.getSelectedItem().toString()));
@@ -154,7 +119,6 @@ public class StartingScreenActivity extends AppCompatActivity {
         }
     }
 
-    //todo
     private void loadCategories() {
         QuizDbHelper dbHelper = QuizDbHelper.getInstance(this);
 
@@ -166,25 +130,16 @@ public class StartingScreenActivity extends AppCompatActivity {
         spinnerCategory.setAdapter(adapterCategories);
     }
 
-    //todo Write TestType** Activity Classes
-    private void loadTestType(){
-        String[] mas = getResources().getStringArray(R.array.TestType);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, mas);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerTestType.setAdapter(adapter);
-    }
-
-    //@todo chage resurce from String to getDatabase.AnsweredTimes**
     private void loadAnsweredType(){
         String[] mas = getResources().getStringArray(R.array.Answered);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, mas);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerAnswered.setAdapter(adapter);
+
     }
 
-
-
-//    Answered times(Atbildētās  reizes);
+//    @Todo call db to find true times, crete spinner to choose difficulty(answered/true/wrong)
+//    private void AnsweredTimes(int answered_times);
 //    private void loadDifficultyLevels() {
 //        String[] difficultyLevels = Question.getAllTopicLevels();
 //
@@ -194,8 +149,6 @@ public class StartingScreenActivity extends AppCompatActivity {
 //        spinnerDifficulty.setAdapter(adapterDifficulty);
 //    }
 
-
-    //@ToDo change heightScore *OF X* to *pieprasītais_Jautājumu_skaits*
     private void loadHighscore() {
         SharedPreferences prefs = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         highscore = prefs.getInt(KEY_HIGHSCORE, 0);

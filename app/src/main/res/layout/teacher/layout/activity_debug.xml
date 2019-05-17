@@ -22,6 +22,18 @@
             android:layout_height="31dp"
             />
 
+        <TextView
+            android:id="@+id/textViewChosenColumn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Izvēlies kolonnu" />
+
+        <Spinner
+            android:id="@+id/spinnerColumnChoose"
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            />
+
     </LinearLayout>
 
     <LinearLayout android:id="@+id/linLayDebugingSecond"
@@ -37,18 +49,45 @@
     </LinearLayout>
 
 
-    <Button
-        android:id="@+id/buttonCreateDbInserts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Izveidot" />
-
     <TextView
         android:id="@+id/textViewDebugInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Info" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical">
+
+        <Button
+            android:id="@+id/buttonCreateDbInserts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Izveidot" />
+
+
+        <Button
+            android:id="@+id/buttonShowDb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Apskatīt" />
+
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/listViewCreatedObject"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+
+        android:divider="@color/material_blue_grey_800"
+        android:dividerHeight="5dp"
+        android:footerDividersEnabled="false" />
 
 
 </LinearLayout>

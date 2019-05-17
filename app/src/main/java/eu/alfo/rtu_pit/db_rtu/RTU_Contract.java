@@ -4,8 +4,6 @@ import android.provider.BaseColumns;
 
 public final class RTU_Contract {
 
-//    private QuizContract() {
-//    }
 
     public static class GradesTable implements BaseColumns {
         public static final String TABLE_NAME = "Grades";

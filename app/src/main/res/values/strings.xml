@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Test School</string>
+    <string name="app_name">Mācību centra vadības sistēma</string>
 
     <string-array name="number09">
         <item tag= "zero">0</item>
@@ -55,10 +55,10 @@
     </string-array>
 
     <string-array name="Answered">
-        <item>NON</item>
-        <item>WRONG</item>
-        <item>TRUE</item>
-        <item></item>
+        <item>Atbildēts</item>
+        <item>Atbildēts: NON</item>
+        <item>Atbildēts: WRONG</item>
+        <item>Atbildēts: TRUE</item>
     </string-array>
 
     <string-array name="Time">
@@ -67,6 +67,18 @@
         <item>60. sec</item>
         <item>90. sec</item>
         <item>120.s.</item>
+    </string-array>
+
+    <string-array name="Test">
+        <item>Testi</item>
+        <item>Jauna jautājuma izveide</item>
+        <item>Jautājuma rediģēšana</item>
+    </string-array>
+
+    <string-array name="Material">
+        <item>Materiāli</item>
+        <item>Failu pievienošana</item>
+        <item>Failu rediģēšana</item>
     </string-array>
 
 

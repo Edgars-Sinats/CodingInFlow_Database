@@ -7,10 +7,14 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.ViewSwitcher;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,17 +27,26 @@ import eu.alfo.rtu_pit.StartingScreenActivity;
 
 public class GroupHeadActivity extends AppCompatActivity{
 
-    QuizDbHelper dbHelper = QuizDbHelper.getInstance(this);
+//    QuizDbHelper dbHelper = QuizDbHelper.getInstance(this);
 
 
     //    private Spinner spinnerNumberOfQuestion;
     private Spinner spinnerAnswered;
     private Spinner spinnerCategory;
+    private Spinner spinnerDocuments;
+    private Spinner spinnerTest;
 
     private Button buttonMakeTest;
-    private Button makeYourOwnQuest;
 
+    private ImageButton imageSearch;
+    private ImageButton imageWrite;
     private Button saveNewQuestion;
+    private ViewSwitcher switcher;
+    private EditText editTextSearchedQ;
+    private Button buttonMakeQ;
+
+
+
 
     //Question row block
     private ListView simpleList;
@@ -47,14 +60,17 @@ public class GroupHeadActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grop_head);
 
-        makeYourOwnQuest = findViewById(R.id.buttonMakeQuestion);
         spinnerCategory = findViewById(R.id.spinner_category2);
         spinnerAnswered = findViewById(R.id.spinner_Answered);
+        spinnerDocuments = findViewById(R.id.spinnerDocuments);
+        spinnerTest = findViewById(R.id.spinnerTest);
         buttonMakeTest = findViewById(R.id.buttonMakeTest);
-
-
-        //
-        simpleList = (ListView) findViewById(R.id.listViewOneObject);
+        simpleList = findViewById(R.id.listViewOneObject);
+        switcher = findViewById(R.id.my_switcher);
+        editTextSearchedQ = switcher.findViewById(R.id.editTextSearchedQuestion);
+        buttonMakeQ = switcher.findViewById(R.id.buttonMakeQuestion);
+        imageSearch = findViewById(R.id.imageSearch);
+        imageWrite = findViewById(R.id.imageWrite);
 
         loadCategories();
         loadAnsweredType();
@@ -67,30 +83,72 @@ public class GroupHeadActivity extends AppCompatActivity{
           }
         });
 
-//
+        spinnerTest.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String spinerTestItemID = (String.valueOf(spinnerTest.getSelectedItemId()));
 
-          ArrayList < String > theList = new ArrayList<>();
-//        Cursor data = dbHelper.getQuestions(1);
+                if(spinerTestItemID.equals("1"))
+                    startActivity(new Intent(GroupHeadActivity.this, NewQuestionActivity.class));
+                if(spinerTestItemID.equals("2"))
+                    startActivity(new Intent(GroupHeadActivity.this, RTU_TeacherEditTestActivity.class));
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
 
+        spinnerDocuments.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String spinnerDocumentItemID = (String.valueOf(spinnerDocuments.getSelectedItemId()));
+
+                if(spinnerDocumentItemID.equals("1"))
+                    startActivity(new Intent(GroupHeadActivity.this, RTU_TeacherAddMaterialActivity.class));
+                if(spinnerDocumentItemID.equals("2"))
+                    startActivity(new Intent(GroupHeadActivity.this, RTU_TeacherEditMaterialActivity.class));
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        imageWrite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                writeImageClicked();
+            }
+        });
+
+        imageSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchImageClicked();
+            }
+        });
+
+        ArrayList < String > theList = new ArrayList<>();
         /*
-
         I need to build "getAllQuestions for scrollable listView"
-
-
          */
         //Dropdown
-
-
 //        ListAdapter listAdapter = new ArrayAdapter<>(this, R.layout.simple_list_item_1, theList)
 
-//Flags??
-        CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), countryList, flags);
-        simpleList.setAdapter(customAdapter);
-
-
-
-        //List for Scrolable ListView
+        //@Todo make new adapter
+//        CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), countryList, flags);
+//        simpleList.setAdapter(customAdapter);
+        //List for Scrollable ListView
     }
+
+
+    public void searchImageClicked(){
+        switcher.showNext();
+    }
+
+    public void writeImageClicked(){
+        switcher.showNext();
+    }
+
     private void loadCategories() {
         QuizDbHelper dbHelper = QuizDbHelper.getInstance(this);
         List<Category> categories = dbHelper.getAllCategories();
@@ -103,7 +161,6 @@ public class GroupHeadActivity extends AppCompatActivity{
 
 
     private void loadAnsweredType(){
-
         String[] mas = getResources().getStringArray(R.array.Answered);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, mas);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

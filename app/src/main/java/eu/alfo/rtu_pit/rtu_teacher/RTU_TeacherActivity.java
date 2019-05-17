@@ -20,6 +20,7 @@ public class RTU_TeacherActivity extends AppCompatActivity{
     private Spinner spinnerDocuments1;
     private Spinner spinnerTest1;
     private Button buttonCalendar;
+    private Button buttonUser;
     private TextView textViewTeachTest;
     private TextView textViewTeachDoc;
 
@@ -30,7 +31,6 @@ public class RTU_TeacherActivity extends AppCompatActivity{
 
         spinnerDocuments1 = findViewById(R.id.spinnerDocuments);
         spinnerTest1 = findViewById(R.id.spinnerTest);
-        buttonCalendar = findViewById(R.id.buttonCalendar);
         textViewTeachDoc = findViewById(R.id.textViewDocTeach);
         textViewTeachTest = findViewById(R.id.textViewTestTeach);
 

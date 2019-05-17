@@ -6,27 +6,43 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
 
 import eu.alfo.rtu_pit.R;
 
 public class CustomAdapter extends BaseAdapter{
-    Context context;
-    String countryList;
-    int flags;
+
+
+    private class ViewHolder{
+        // add here views, which are defined in `list_row Layout`
+        public TextView data;
+        public TextView textBig;
+
+    }
+
+    String[] columnNames;
     LayoutInflater inflter;
 
-    public CustomAdapter(Context applicationContext, String countryList, int flags) {
-        this.context = applicationContext;
-        this.countryList = countryList;
-        this.flags = flags;
-        inflter = (LayoutInflater.from(applicationContext));
+
+    private List<ArrayList<String>> rows;
+
+    public CustomAdapter(Context context, List<ArrayList<String>> rows, String[] columnNames) {
+        this.columnNames = columnNames;
+        this.rows = rows;
+
+        this.inflter = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount() {
-        return 51;
+        return rows.size();
     }
 
     @Override
@@ -36,20 +52,49 @@ public class CustomAdapter extends BaseAdapter{
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
 
 //  public View getView(int position, View view, ViewGroup viewGroup) {
 
+    //    @Todo izveidot listu no DB priekš DebuginActivity
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        view = inflter.inflate(R.layout.activity_list_view_question_plus, null);
-        TextView country = (TextView) view.findViewById(R.id.textView);
-        ImageView icon = (ImageView) view.findViewById(R.id.icon);
-        country.setText(countryList);
-        icon.setImageResource(flags);
-        return view;
+    public View getView(int iPosition, View convertView, ViewGroup viewGroup) {
+        ViewHolder holder;
+        if (convertView == null) {
+            convertView = inflter.inflate(R.layout.activity_list_view_row, null);
+            holder = new ViewHolder();
+            holder.data = convertView.findViewById(R.id.textViewDbInsert);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder)convertView.getTag();
+        }
+
+        StringBuilder stringBuilder = new StringBuilder();
+        String itemText;
+
+        String userSelected = "Teacher_ID";
+
+        for(int i = 0; i < this.columnNames.length; i++){
+            String t = this.columnNames[i] + ": " + rows.get(iPosition).get(i);
+
+
+
+            stringBuilder.append(t);
+
+            if(i != this.columnNames.length - 1){
+                stringBuilder.append(", ");
+            }
+
+        }
+
+        holder.data.setText(stringBuilder.toString());
+
+        return convertView;
     }
+
+
 }
+
 

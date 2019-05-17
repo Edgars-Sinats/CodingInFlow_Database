@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import eu.alfo.rtu_pit.rtu_student.StudentActivity;
+import eu.alfo.rtu_pit.rtu_teacher.GroupHeadActivity;
 import eu.alfo.rtu_pit.rtu_teacher.RTU_TeacherActivity;
 
 public class LoginActivity extends AppCompatActivity{
@@ -33,8 +35,6 @@ public class LoginActivity extends AppCompatActivity{
         buttonLogIn = findViewById(R.id.buttonLogIn);
         textViewTest = findViewById(R.id.textViewTest);
         textViewTes2 = findViewById(R.id.textViewTest2);
-
-
 
         buttonLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,8 +59,8 @@ public class LoginActivity extends AppCompatActivity{
             case "s":
                 if(editTextPassword.getText().toString().equals("s")){
                     textViewTest.setText("Student");
-                    Intent intent1 = new Intent(this, StartingScreenActivity.class);
-                    intent1.putExtra("ChoseZ", "Option_non");
+                    Intent intent1 = new Intent(this, StudentActivity.class);
+                    intent1.putExtra("user", "student");
                     startActivityForResult(intent1,1);
 
 //                    textViewTes2.setText(getText(Integer.parseInt(editTextUName.toString())));   NOT WORKING!? WHY??
@@ -71,11 +71,10 @@ public class LoginActivity extends AppCompatActivity{
 
             case "t":
                 if(editTextPassword.getText().toString().equals("t")){
-
                     textViewTest.setText("Teacher");
-                    Intent intent1 = new Intent(this, RTU_TeacherActivity.class);
-                    intent1.putExtra("ChoseInt1", "Option1");
-                    startActivityForResult(intent1,2);
+                    Intent intent1 = new Intent(this, GroupHeadActivity.class);
+                    intent1.putExtra("user", "teacher");
+                    startActivityForResult(intent1,1);
 
                 }else {
                     customDialog("Kļūda autentifikācijā","Ievadītā parole pasniedzējam ir nepareiza", "cancelMethod1","okMethod1");
@@ -85,6 +84,9 @@ public class LoginActivity extends AppCompatActivity{
             case "admin":
                 if(editTextPassword.getText().toString().equals("admin")){
                     textViewTest.setText("Admin");
+                    Intent intent1 = new Intent(this, GroupHeadActivity.class);
+                    intent1.putExtra("user", "admin");
+                    startActivityForResult(intent1,1);
                     customDialog("Try Again :/","This is not meant for you :)", "cancelMethod1","okMethod1");
                 }else {
                     customDialog("Dialog Box 1","This is Dialog Box 1", "cancelMethod1","okMethod1");
@@ -109,7 +111,6 @@ public class LoginActivity extends AppCompatActivity{
                 break;
 
             case "b":
-
                     textViewTest.setText("Small b");
                     customDialog("Mana autentifikācijā","Ievadītais lietotājvārds ir b", "cancelMethod1","okMethod1");
                 break;
@@ -148,7 +149,7 @@ public class LoginActivity extends AppCompatActivity{
                 break;
 
             default:
-                customDialog("Kļūda autentifikācijā","Ievadītais lietotājvārds ir nepareiz/n pamēģiniet ievadīt \n ar citu kodu\n Ieteiktie kodi: t/admin/s", "cancelMethod2","okMethod2");
+                customDialog("Kļūda autentifikācijā","Ievadītais lietotājvārds ir nepareiz pamēģiniet ievadīt \n citu kodu\n Ieteiktie kodi: t/s", "cancelMethod2","okMethod2");
                 break;
         }
     }

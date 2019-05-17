@@ -22,16 +22,17 @@ import static android.content.ContentValues.TAG;
 public class QuizDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "HUNTTEST.db"; //Change name if you want to test
     private static final int DATABASE_VERSION = 13; //increase(aTimes-12)(7)
-
     private static QuizDbHelper instance;
 
-    private SQLiteDatabase db ;
+    public SQLiteDatabase db ;
 
     private QuizDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    //Ony once in time you can use on Instance
     public static synchronized QuizDbHelper getInstance(Context context) {
+
         if (instance == null) {
             instance = new QuizDbHelper(context.getApplicationContext());
         }
@@ -76,7 +77,7 @@ public class QuizDbHelper extends SQLiteOpenHelper {
             db.execSQL(querries[i]);
         }
 
-        fakeData(db);
+//        fakeData(db);
     }
 
     @Override
@@ -103,28 +104,32 @@ public class QuizDbHelper extends SQLiteOpenHelper {
         db.setForeignKeyConstraintsEnabled(true);
     }
 
-    public void fakeData(SQLiteDatabase db){
-        DataGenerator dataGenerator = new DataGenerator(db);
+//    public void fakeData(SQLiteDatabase db){
+//        DataGenerator dataGenerator = new DataGenerator(db);
+//
+//    }
+
+    public void execSQL(String sql)
+    {
+        db.execSQL(sql);
     }
-
-
 
     private void fillCategoriesTable() {
         Category c1 = new Category("Programming");
         addCategory(c1);
-        Category c2 = new Category("Geography");
+        Category c2 = new Category("Fizika");
         addCategory(c2);
-        Category c3 = new Category("Math");
+        Category c3 = new Category("Matemātika");
         addCategory(c3);
-        Category c4 = new Category("M4");
+        Category c4 = new Category("IT");
         addCategory(c4);
-        Category c5 = new Category("M5");
+        Category c5 = new Category("SAZI");
         addCategory(c5);
-        Category c6 = new Category("M6");
+        Category c6 = new Category("DIFS");
         addCategory(c6);
-        Category c7 = new Category("M7");
+        Category c7 = new Category("Politoloģija");
         addCategory(c7);
-        Category c8 = new Category("M8. very long category for you to think about `cause this is problem i guess");
+        Category c8 = new Category("Uzņēmēji");
         addCategory(c8);
 //        Category c9 = new Category("M9");
 //        addCategory(c9);
